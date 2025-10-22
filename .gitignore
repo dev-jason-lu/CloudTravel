@@ -24,6 +24,8 @@ web-build/
 # IDE
 .vscode/
 .idea/
+.claude/
+.joycode/
 
 # Logs
 *.log
