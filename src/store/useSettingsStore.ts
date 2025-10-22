@@ -58,7 +58,7 @@ export const useSettingsStore = create<SettingsState>()(
       // 默认配置 - 使用doubao provider
       aiConfig: {
         provider: 'doubao',
-        apiKey: '28539bdc-f1e2-40b5-80ca-4931ee294c53',
+        apiKey: process.env.EXPO_PUBLIC_DOUBAO_API_KEY || '',
         model: 'doubao-seed-1-6-251015',
         maxTokens: 4096,
         temperature: 0.7,
@@ -98,7 +98,7 @@ export const useSettingsStore = create<SettingsState>()(
         set({
           aiConfig: {
             provider: 'doubao',
-            apiKey: '28539bdc-f1e2-40b5-80ca-4931ee294c53',
+            apiKey: process.env.EXPO_PUBLIC_DOUBAO_API_KEY || '',
             model: 'doubao-seed-1-6-251015',
             maxTokens: 4096,
             temperature: 0.7,

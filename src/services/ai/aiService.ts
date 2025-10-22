@@ -30,7 +30,11 @@ class AIService {
         model: 'claude-3-5-sonnet-20241022',
         max_tokens: 4096,
         messages: this.formatMessages(messages),
-        system: PROMPT_TEMPLATES.system(this.context),
+        system: PROMPT_TEMPLATES.system({
+          destination: this.context.destination || '',
+          startDate: this.context.startDate || '',
+          days: this.context.days || 0,
+        }),
       });
 
       for await (const chunk of stream) {
@@ -53,7 +57,11 @@ class AIService {
         model: 'claude-3-5-sonnet-20241022',
         max_tokens: 4096,
         messages: this.formatMessages(messages),
-        system: PROMPT_TEMPLATES.system(this.context),
+        system: PROMPT_TEMPLATES.system({
+          destination: this.context.destination || '',
+          startDate: this.context.startDate || '',
+          days: this.context.days || 0,
+        }),
       });
 
       const content = response.content[0];
